@@ -1,0 +1,48 @@
+sources:
+  mapzen-mvt:
+    type: MVT
+    url: https://osm.tegola.io/maps/osm/{z}/{x}/{y}.mvt
+
+layers:
+  water_lines:
+    data: { source: mapzen-mvt}
+    draw:
+      lines:
+        color: blue
+        order: 4
+  water_areas:
+    data: { source: mapzen-mvt}
+    draw:
+      polygons:
+        color: blue
+        #color: [0.69, 0.86, 0.71, .5]
+        order: 1
+
+  transport_lines:
+    data: { source: mapzen-mvt}
+    draw:
+      lines:
+        width: 1px
+        color: red
+        order: 5
+  landuse_areas:
+    data: { source: mapzen-mvt}
+    draw:
+      lines:
+        order: 1
+        width: 2px
+        color: gray
+    forest:
+      filter: { type: [forest, wood, nature_reserve] }
+      draw:
+        polygons:
+          color: [0.100, 0.179, 0.100, 0.09]
+          #color: [[10, [0.3, 0.4, 0.3]], [14, [0.5, 0.825, 0.5]]]
+          #color: green
+          order: 2
+  land:
+    data: { source: mapzen-mvt}
+    draw:
+      polygons:
+        color: [0.98, 0.117, 0.98]
+        order: 1
