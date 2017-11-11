@@ -44,5 +44,5 @@ layers:
     data: { source: mapzen-mvt}
     draw:
       polygons:
-        color: [0.98, 0.117, 0.98]
+        color: '#f7f6f1'
         order: 1
